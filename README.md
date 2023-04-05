@@ -11,7 +11,7 @@ cd yolov8_ByteTrack_TensorRT
 
 ```
 
-下载并编译eigen3，[密码ueq4](https://pan.baidu.com/s/15kEfCxpy-T7tz60msxxExg)
+## 下载并编译eigen3，[密码ueq4](https://pan.baidu.com/s/15kEfCxpy-T7tz60msxxExg)
 
 ```python
 unzip eigen-3.3.9.zip
@@ -23,7 +23,7 @@ sudo make install
 ```
 
 
-修改CMakeList.txt，主要是一下几个方面
+## 修改CMakeList.txt，主要是以下几个方面
 
 ```python
 set(CMAKE_CUDA_COMPILER /usr/local/cuda-11.4/bin/nvcc)          # cuda版本
@@ -44,7 +44,7 @@ list(APPEND INCLUDE_DIRS
 ```
 
 
-编译：
+## 编译：
 
 ```python
 mkdir build
@@ -53,10 +53,20 @@ cmake ..
 make -j8
 ```
 
-运行：
+## 将engine引擎文件拷贝过来，替换掉model中的，转换过程见我另一个仓库：
+
+[yolov8_ByteTrack](https://github.com/1079863482/yolov8_ByteTrack)
+
+## 运行：
 ```python
 ./yolov8 ./model/yolov8n.engine data/4.mp4
 ```
 
+运行结果:
+![image](https://user-images.githubusercontent.com/52614226/229998363-47d7c95f-a557-4d41-b678-137e4bd04d7b.png)
 
 
+## 参考
+[ByteTrack](https://github.com/ifzhang/ByteTrack/tree/main/deploy/TensorRT/cpp)
+
+[YOLOv8-TensorRT](https://github.com/triple-Mu/YOLOv8-TensorRT)
